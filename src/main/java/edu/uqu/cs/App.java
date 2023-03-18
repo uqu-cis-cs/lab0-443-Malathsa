@@ -46,13 +46,65 @@ public class App{
     public static void main(String [] args) {
         
 
-        /* Write your code here */
-     
-       //call method twisters()
-       //prompt user to enter a string 
-       //call method phoneKeypad(string)
-
-
+        public static void twisters(){
+        for (int i=1;i<=110;i++){
+            if (i%2==0){
+                System.out.print("Tweetle"); 
+            }
+            if (i%4==0){
+                System.out.print("Beetle");
+            }
+            if (i%6==0){
+                System.out.print("Poodle");
+            } 
+            if (i%2!=0 && i%4!=0 && i%6!=0) {
+                System.out.print(i); 
+            } 
+            for (int num=1;num<=10;num++)
+                if (i==11*num){
+                    System.out.println("");
+                }
+            
+        }
     }
+    
+    public static String phoneKeypad(String str){
+        
+        String result="";
+        String str2=str.toLowerCase();
+        for (int index=0;index<str.length();index++){
+             char c=str.charAt(index);
+             if (c=='a' || c=='b' || c=='c'){
+                 result+="2";
+             }
+             else if (c=='d' || c=='e' || c=='f'){
+                 result+="3";
+            }  
+             else if ( c== 'g' || c=='h' || c=='i'){
+                 result+="4";
+             }
+             else if (c=='j' || c=='k' || c=='l'){
+                 result+="5";
+             }
+             else if (c=='m' || c=='n' || c=='o'){
+                 result+="6";
+             }
+             
+        
+        } return result;
+    }
+     
+    public static void main(String[] args) {
+        twisters();
+        
+        System.out.println("");
+        
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter a line of string:");
+        String str=input.nextLine();
+        System.out.println(phoneKeypad(str));
+    }
+    
+}
 
 }
